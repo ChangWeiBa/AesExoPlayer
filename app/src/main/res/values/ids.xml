@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="toolbar" type="id"/>
+
+    <item name="title" type="id"/>
+
+    <item name="reload" type="id"/>
+
+    <!-- msgadapter -->
+    <item name="tag_first" type="id"/>
+    <item name="tag_second" type="id"/>
+
+</resources>

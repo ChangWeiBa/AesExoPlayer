@@ -1,0 +1,63 @@
+<resources>
+
+    <!--标题高度-->
+    <dimen name="action_bar_size">48dp</dimen>
+
+    <!--标题阴影-->
+    <dimen name="action_bar_elevation">4dp</dimen>
+    <dimen name="home_bottom_bar_size">56dp</dimen>
+
+    <dimen name="toolbar_top">25dp</dimen>
+
+    <!--首页SwipeRefreshLayout 偏移-->
+    <dimen name="swipe_refresh_layout_offset_start">24dp</dimen>
+    <dimen name="swipe_refresh_layout_offset_end">56dp</dimen>
+
+    <dimen name="main_toolbar_parallax_height">180dp</dimen>
+
+
+    <dimen name="title">18sp</dimen>
+    <dimen name="subtitle">17sp</dimen>
+    <dimen name="main_content">16sp</dimen>
+    <dimen name="sub_content">14sp</dimen>
+    <dimen name="trivial_content">12sp</dimen>
+
+
+
+    <dimen name="t1">36sp</dimen>
+    <dimen name="t2">34sp</dimen>
+    <dimen name="t3">32sp</dimen>
+    <dimen name="t4">28sp</dimen>
+    <dimen name="t5">24sp</dimen>
+    <!--大小-->
+    <!--h1-->
+    <dimen name="h1">9sp</dimen>
+    <!--h2-->
+    <dimen name="h2">10sp</dimen>
+    <!--h3-->
+    <dimen name="h3">11sp</dimen>
+    <!--h4-->
+    <dimen name="h4">12sp</dimen>
+    <!--h5-->
+    <dimen name="h5">13sp</dimen>
+    <!--h6-->
+    <dimen name="h6">14sp</dimen>
+    <!--h7-->
+    <dimen name="h7">15sp</dimen>
+    <!--h8-->
+    <dimen name="h8">16sp</dimen>
+    <!--h9-->
+    <dimen name="h9">17sp</dimen>
+    <!--h10-->
+    <dimen name="h10">18sp</dimen>
+    <!--h11-->
+    <dimen name="h11">19sp</dimen>
+
+    <dimen name="h12">20sp</dimen>
+
+    <dimen name="toolbar_margin">15dp</dimen>
+    <dimen name="dp_70">70dp</dimen>
+
+    <dimen name="collapsed_header_height">72dp</dimen>
+
+</resources>
