@@ -2,7 +2,7 @@
 
 开局一张图
 
-![dataSource.png](/blob/master/dataSource.png "dataSource.png")
+![dataSource.png](/dataSource.png "dataSource.png")
 
 [ExoPlayer源码浅析](http://www.jianshu.com/p/4dede867739d "ExoPlayer源码浅析")
 
@@ -14,7 +14,7 @@
 ## 需求与适用范围
 首先本文的适用范围是使用ExoPlayer框架时，直接解密播放已经经过AES加密过（或者类似需求）的音频或者视频，是利用官方demo内DefaultDataSourceFactory与DefaultDataSource改造而来。有需求就可以继续往下看了
 
-##### 0.故事的开始
+#### 0.故事的开始
 故事的开始还得从新需求开始说起。公司新开了一个旅游项目，其中主要功能就是播放在线或者本地音频，这个非常非常平常的需求，让我开始EXO之旅。
 
 为什么不使用最平常简单的MediaPlayer,因为程序员喜新厌旧哇 嘻嘻。
@@ -40,15 +40,15 @@
 
 通过前期查看和研究ExoPlayer源码我们观察到，这一系列的资源提供、分拆与解析过程在ExtractorMediaSource下的ExtractorMediaPeriod类有很清晰的体现。
 
-![DefaultExtractorInput.png](/blob/master/DefaultExtractorInput.png "DefaultExtractorInput.png")
+![DefaultExtractorInput.png](/DefaultExtractorInput.png "DefaultExtractorInput.png")
 
 而我们需要实现的需求中，本质上只是把MP3文件加密了一次而已，它在播放的时候，最终只需要在拆解提供资源的时候把加密的文件流解密成正常的MP3流，给ExtractorMediaSource提供正常的MP3流即可，所以并不需要再过多的进行其他复杂操作就可以完成此需求。
 
 那么我实现的就是重写DefaultDataSourceFactory资源提供工厂类，改造DefaultDataSource，根据文件类型判断，加密的音频使用Aes128DataSource类拆解进行解密，未加密或者在线的URL继续使用getFileDataSource或者getContentDataSource原本默认的实现进行拆解。最后只需要用我们改写的factory替换默认的DataSourceFactory就可以完成我们的需求了。
 
-![TestPlayerActivity.png](/blob/master/TestPlayerActivity.png "TestPlayerActivity.png")
+![TestPlayerActivity.png](/TestPlayerActivity.png "TestPlayerActivity.png")
 
-###### 1.AitripDataSourceFactory
+#### 1.AitripDataSourceFactory
 AitripDataSourceFactory是重写的DataSourceFactory工厂类，直接copyDefaultDataSource而来。主要是重写了createDataSource()方法，用于进入资源选择类AitripDataSource
 
 ```java
@@ -58,7 +58,7 @@ AitripDataSourceFactory是重写的DataSourceFactory工厂类，直接copyDefaul
     }
 ```
 
-###### 2.AitripDataSource
+#### 2.AitripDataSource
 改写DataSource内open方法，用于扩展数据源选择方案，以让其正确选择到我们的解密Aes128DataSource类，注释基本可以解释一切。因为我在本地加密的文件是在文件名后又添加了.aitrip字段，所以只需根据文件名判断是否包含.aitrip，选择正确的DataSource解析即可。
 
 ```java
@@ -96,7 +96,7 @@ AitripDataSourceFactory是重写的DataSourceFactory工厂类，直接copyDefaul
         return dataSource.open(dataSpec);
     }
  ```
-###### 3.Aes128DataSource
+#### 3.Aes128DataSource
 直接copy自官方demo的AesDataSource，其本用于HLS文件播放列表解密的，但是很巧的是采用了解密方式，对我也同样适用，所以并不需要改动任何一行代码。。
 它主要是实现open后，利用Aes解密方式解密文件流提供给上层使用。
 
