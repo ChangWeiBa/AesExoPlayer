@@ -20,7 +20,7 @@ public class AppContext extends Application {
     private static AppContext instance;
     private String userAgent;
     private static String FildDir =Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator +
-            "aitriping";
+            "ExoPlayerTest";
 
 
     @Override

@@ -23,8 +23,7 @@ public class AitripDataSourceFactory  implements DataSource.Factory {
      * @param userAgent The User-Agent string that should be used.
      */
     public AitripDataSourceFactory(Context context, String userAgent) {
-        this(context, userAgent, null);
-    }
+        this(context, userAgent, null);    }
 
     /**
      * @param context A context.
