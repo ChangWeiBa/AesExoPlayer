@@ -4,6 +4,8 @@
 
 ![dataSource.png](/dataSource.png "dataSource.png")
 
+[本文博客地址](http://blog.csdn.net/wanniu/article/details/78533796 "还可以进入博客查看本文")
+
 [ExoPlayer源码浅析](http://www.jianshu.com/p/4dede867739d "ExoPlayer源码浅析")
 
 [ExoPlayer官方文档](http://www.jianshu.com/p/4dede867739d "ExoPlayer 官方文档")
